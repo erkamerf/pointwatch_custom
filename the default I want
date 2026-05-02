@@ -1,0 +1,55 @@
+Below is a bunch of experimentation I did until I finally got it to work. In this folder is a copy of statics.lua with default values that are exactly what I want and WORKING.
+This program is seriously FUCKED so I hope having this folder will help in the future.
+
+
+
+
+
+
+
+
+
+
+string.format(&apos;[%s] %d/%d Exp || [%s/%d] Merits || [%s] JP CP/hr:%.1fk || %d/%dEP EP/hr:%.1fk || Sparks:[%s] Accs:[%s]&apos;,xp.job,xp.current,xp.tnl,max_color(&apos;%.0f&apos;:format(math.floor(lp.number_of_merits)),lp.current/lp.tnm+lp.number_of_merits,lp.maximum_merits,58,147,191),lp.maximum_merits,max_color(&apos;%.0f&apos;:format(math.floor(cp.current/cp.tnjp*100)/100+cp.number_of_job_points),cp.current/cp.tnjp+cp.number_of_job_points,500,58,147,191),math.floor(cp.rate/100)/10,ep.current,ep.tnml,math.floor(ep.rate/100)/10,max_color(&apos;%.0f&apos;:format(math.floor(sparks.current)),sparks.current,sparks.maximum,58,147,191),max_color(&apos;%.0f&apos;:format(math.floor(accolades.current)),accolades.current,accolades.maximum,58,147,191))
+
+
+
+
+
+string.format('[%s] %d/%d Exp || [%s/%d] Merits || [%s] JP CP/hr:%.1fk || %d/%dEP EP/hr:%.1fk || Sparks:[%s] Accs:[%s]',xp.job,xp.current,xp.tnl,max_color('%.0f':format(math.floor(lp.number_of_merits)),lp.current/lp.tnm+lp.number_of_merits,lp.maximum_merits,58,147,191),lp.maximum_merits,max_color('%.0f':format(math.floor(cp.current/cp.tnjp*100)/100+cp.number_of_job_points),cp.current/cp.tnjp+cp.number_of_job_points,500,58,147,191),math.floor(cp.rate/100)/10,ep.current,ep.tnml,math.floor(ep.rate/100)/10,max_color('%.0f':format(math.floor(sparks.current)),sparks.current,sparks.maximum,58,147,191),max_color('%.0f':format(math.floor(accolades.current)),accolades.current,accolades.maximum,58,147,191))
+
+
+
+
+
+string.format(&amp;apos;ML%d %d/%dEP Amber:%d | Azure:%d | Ruby:%d | Pearl:%d | Ebon:%d | Silver:%d | Gold:%d | Time-Remaining:%d&amp;apos;,ep.master_level,ep.current,ep.tnml,abyssea.amber or 0,abyssea.azure or 0,abyssea.ruby or 0,abyssea.pearlescent or 0,abyssea.ebon or 0,abyssea.silvery or 0,abyssea.golden or 0,abyssea.time_remaining or 0)
+
+
+string.format('ML%d %d/%dEP || Sparks:[%s] Accs:[%s] || Amber:%d | Azure:%d | Ruby:%d | Pearl:%d | Ebon:%d | Silver:%d | Gold:%d | Time-Remaining:%d',ep.master_level,ep.current,ep.tnml,max_color('%.0f':format(math.floor(sparks.current)),sparks.current,sparks.maximum,58,147,191),max_color('%.0f':format(math.floor(accolades.current)),accolades.current,accolades.maximum,58,147,191),abyssea.amber or 0,abyssea.azure or 0,abyssea.ruby or 0,abyssea.pearlescent or 0,abyssea.ebon or 0,abyssea.silvery or 0,abyssea.golden or 0,abyssea.time_remaining or 0)
+
+
+
+
+
+
+
+            <abyssea>string.format(&amp;apos;ML%d %d/%dEP Amber:%d | Azure:%d | Ruby:%d | Pearl:%d | Ebon:%d | Silver:%d | Gold:%d | Time-Remaining:%d&amp;apos;,ep.master_level,ep.current,ep.tnml,abyssea.amber or 0,abyssea.azure or 0,abyssea.ruby or 0,abyssea.pearlescent or 0,abyssea.ebon or 0,abyssea.silvery or 0,abyssea.golden or 0,abyssea.time_remaining or 0)</abyssea>
+
+
+                        <dynamis>string.format(&amp;apos;ML%d %d/%dEP Sparks:[%s] Accs:[%s] %s %s&amp;apos;,ep.master_level,ep.current,ep.tnml,max_color(&amp;apos;%.0f&amp;apos;:format(math.floor(sparks.current)),sparks.current,sparks.maximum,58,147,191),max_color(&amp;apos;%.0f&amp;apos;:format(math.floor(accolades.current)),accolades.current,accolades.maximum,58,147,191),dynamis.KIs,dynamis.time_remaining or 0)</dynamis>
+
+
+
+            string.format('ML%d %d/%dEP | Sparks:[%s] Accs:[%s] | %s  %s',ep.master_level,ep.current,ep.tnml,max_color('%.0f':format(math.floor(sparks.current)),sparks.current,sparks.maximum,58,147,191),max_color('%.0f':format(math.floor(accolades.current)),accolades.current,accolades.maximum,58,147,191),dynamis.KIs,dynamis.time_remaining or 0)
+
+
+
+                                <text_box_settings>
+            <pos>
+                <x>17</x>
+                <y>1334</y>
+            </pos>
+            <text>
+                <size>10</size>
+            </text>
+        </text_box_settings>
